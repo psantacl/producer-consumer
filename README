@@ -1,0 +1,16 @@
+# producer-consumer
+Micro-benchmarks for various forms of producer/consumer strategies in clojure. Allows you push X number of integers through the system and reports the time taken.
+
+Current results for 1_000_000 integers on my macbook:
+STM with Clojure Persistent Queue: 8 seconds 
+Lockless Ring Buffer(clj-ring-buffer): 30 seconds
+Java NIO Pipes: 60 seconds
+
+## Usage
+
+Just open up a namespace, and eval the (run-simulation *producer* *consumer* 1000000) form in the comments block.
+ 
+## License
+
+Information Wants To Be Free
+Distributed under the Eclipse Public License, the same as Clojure.
