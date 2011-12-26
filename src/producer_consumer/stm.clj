@@ -54,6 +54,7 @@
   (run-simulation *producer* *consumer* 1000000)
   
   (time-taken-ms)
-  8066.034
+  ;; 1_000_000 integers
+  ;; 8066.034
 
   )
