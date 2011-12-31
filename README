@@ -1,10 +1,13 @@
 # producer-consumer
 Micro-benchmarks for various forms of producer/consumer strategies in clojure. Allows you to push X number of integers across thread boundaries and report the time taken.
 
-Current results for 1_000_000 integers on my macbook:
+Current results for 1_000_000 integers on my macbook using 1 producer && 1 consumer:
+Lockless Ring Buffer(clj-ring-buffer): 3 seconds
 STM with Clojure Persistent Queue:     8 seconds 
-Lockless Ring Buffer(clj-ring-buffer): 30 seconds
-Java NIO Pipes:                        60 seconds  -- much of this is probably from marshalling/unmarshalling to the required ByteBuffer intermediate form, but still...
+Java NIO Pipes:                        60 seconds * 
+
+* much of this is probably from marshalling/unmarshalling to the required ByteBuffer intermediate form, but as this is a nescessary step(unless you do not need to manipulate POJO's), 
+I still maintain it is a performance limitation.
 
 ## Usage
 

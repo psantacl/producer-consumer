@@ -44,17 +44,15 @@
 (comment
   (count @*results*)
   
-  (run-simulation *producer* *consumer* 1000000)
-  
+  (run-simulation *producer* *consumer* 1000000)  
   
   (time-taken-ms)
 
-  ;;1_000_000 integers, 10k ring buffer
-  ;; 28930.613
-  ;; 32183.209
-  ;; 25677.627
-  ;; 27100.62
-  ;; 30539.543
 
+  ;;1_000_000 integers, 10k ring buffer
+  ;; 4221.145
+  ;; 2565.992
+  ;; 2723.414
+  ;; 3366.57
   
   (rbuf/peek (:ring-buffer *rb*)))
